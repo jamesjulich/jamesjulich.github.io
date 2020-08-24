@@ -1,0 +1,187 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    position: relative;
+    text-align: center;
+    background-color: #607196;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
+nav {
+    position: absolute;
+    top: 25px;
+    text-align: center;
+}
+
+.nav-element {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    color: #E8E9ED;
+    margin: 25px;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #E8E9ED;
+}
+
+h1 {
+    font-size: 45px;
+}
+
+h2 {
+    font-size: 25px;
+} 
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #E8E9ED;
+    line-height: 24px;
+}
+
+#hero-div {
+    margin-left: 100px;
+}
+
+#hero {
+    margin-bottom: 10px;
+}
+
+#hero-desc {
+    margin-top: 0px;
+}
+
+#profile-pic {
+    width: 200px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #E8E9ED;
+}
+
+#band {
+    display: flex;
+    background-color: #A93F55;
+    min-height: 100vh;
+    padding-left: 5vw;
+    padding-right: 15vw;
+    align-items: center;
+}
+
+#band-head {
+    margin-bottom: 30px;
+}
+
+#band-text {
+    max-width: 730px;
+}
+
+#projects {
+    background-color: #E8E9ED;
+    display: block;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.project-card {
+    position: relative;
+    text-align: left;
+    width: 365px;
+    height: 190px;
+    box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 0.27);
+    border-radius: 15px;
+    padding: 15px 25px 25px 25px;
+    margin: 20px 35px 20px 35px;
+}
+
+.project-desc {
+    color: #141B41;
+    font-size: 15px;
+    line-height: 1.5em;
+    max-width: 290px;
+}
+
+.github-link {
+    position: absolute;
+    bottom: 30px;
+}
+
+.social-icons-header {
+    position: absolute;
+    bottom: 45px;
+    left: 45px;
+}
+
+footer {
+    background-color: #607196;
+    padding: 10px;
+    text-align: center;
+}
+
+#made-with-love {
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 17px;
+    }
+
+    #hero-div {
+        margin-left: 0px;
+    }
+
+    .social-icons-header {
+        bottom: 30px;
+        left: 30px;
+    }
+
+    #band {
+        min-height: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    #band-head {
+        margin-top: 0px;
+        font-size: 25px;
+    }
+
+    #band-text {
+        font-size: 13px;
+        max-width: 80vw;
+        margin-bottom: 0px;
+    }
+}
