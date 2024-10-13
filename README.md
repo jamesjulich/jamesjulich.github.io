@@ -1,6 +1,6 @@
 # Personal Website
 
-# Attributes
+# Attributions
 
 This project uses icons from Tabler.
 
