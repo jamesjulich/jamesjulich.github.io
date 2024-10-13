@@ -1,0 +1,19 @@
+---
+interface Props {
+    title: string
+    date: Date
+    href: string
+}
+
+const { title, date, href } = Astro.props
+
+const dateString = date.toLocaleDateString('en-us', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+})
+---
+<a class="flex justify-between w-full gap-4 items-center text-main hover:text-primary" href={href}>
+    <p>{title}</p>
+    <p class="text-nowrap text-end text-muted text-sm">{dateString}</p>
+</a>

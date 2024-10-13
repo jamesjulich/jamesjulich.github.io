@@ -1,0 +1,44 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import profile from "../images/profile.jpg"
+import { Image } from 'astro:assets'
+import { NAME } from '../consts'
+
+type Props = CollectionEntry<'blog'>['data']
+
+const props = Astro.props
+
+const publishedDateString = props.pubDate.toLocaleDateString('en-us', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+})
+---
+<div class="flex flex-col justify-center text-center">
+    {props.heroImage && props.heroWidth && props.heroHeight && props.heroAlt &&
+        <Image
+            src={props.heroImage}
+            alt={props.heroAlt}
+            width={props.heroWidth}
+            height={props.heroHeight}
+            densities={[1.5, 2]}
+            loading="eager"
+            class="rounded-lg mb-6"
+        />
+    }
+    <h1 class="text-5xl text-main font-bold mb-4">{props.title}</h1>
+    <p class="text-muted mb-4">{publishedDateString}</p>
+    <a href="/" class="flex items-center gap-5 mb-6 mx-auto text-muted hover:text-primary">
+        <Image 
+            src={profile}
+            alt="Profile pic of me"
+            class="rounded-md"
+            width={40}
+            height={40}
+            densities={[1.5, 2]}
+            loading="eager"
+        />
+        <p>{NAME}</p>
+    </a>
+    <hr class="mb-6 border-main" />
+</div>

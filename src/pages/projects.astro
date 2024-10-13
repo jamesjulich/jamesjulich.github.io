@@ -1,0 +1,34 @@
+---
+import BrandGithub from '../components/icons/brand-github.astro';
+import SocialLink from '../components/SocialLink.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout oneCol>
+	<div class="prose mb-6">
+		<h1>Projects</h1>
+		<p>A collection of codebases I've worked on, created, or contributed to. This list is non-exhaustive, but it represents more recent/relevant work.</p>
+		<SocialLink class="not-prose text-base" text="jamesjulich" href="https://github.com/jamesjulich"><BrandGithub /></SocialLink>
+	</div>
+	<ProjectCard 
+		title="Badger Spill" 
+		description="Student organization that connects UW-Madison students to peers for support. Rewrote website and API using modern technologies, introduced a proper version control system, and reduced hosting costs by 80%."
+		link="https://thebadgerspill.com"
+	/>
+	<ProjectCard 
+		title="Cinny.in" 
+		description="Web-based client for the Matrix federated messaging protocol. Contributed various features, including the ability to use single sign-on."
+		link="https://cinny.in"
+	/>
+	<ProjectCard 
+		title="saltpack4j" 
+		description="A partial Java implementation of the saltpack secure messaging specification."
+		link="https://github.com/jamesjulich/saltpack4j"
+	/>
+	<ProjectCard 
+		title="jamesjulich.me" 
+		description="Source code for this website. Redesigned in Q4 2024."
+		link="https://github.com/jamesjulich/jamesjulich.github.io"
+	/>
+</BaseLayout>

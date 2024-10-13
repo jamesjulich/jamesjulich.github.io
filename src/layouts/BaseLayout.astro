@@ -1,0 +1,23 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+interface Props {
+    title?: string
+    description?: string
+    image?: string
+    oneCol?: boolean
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, image, oneCol } = Astro.props
+---
+<!doctype html>
+<html id="root" lang="en" class="bg-main">
+    <head>
+        <BaseHead title={title} description={description} image={image} />
+    </head>
+    <body class:list={["mx-auto p-10", { "max-w-5xl": !oneCol }, { "max-w-3xl": oneCol }]}>
+        <Header />
+        <slot />
+    </body>
+</html>

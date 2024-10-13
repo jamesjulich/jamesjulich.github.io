@@ -1,0 +1,20 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import { Image, type LocalImageProps, type RemoteImageProps } from 'astro:assets'
+import type { JsxElement } from 'typescript'
+type Props = {
+    text: string
+    href: string
+    class?: string
+}
+
+const props = Astro.props
+
+const mainStyle = "flex gap-3 text-muted hover:text-primary focus:text-primary w-fit"
+const classes = props.class ? [mainStyle, props.class] : mainStyle
+---
+
+<a href={props.href} class:list={classes} >
+    <slot />
+    <p>{props.text}</p>
+</a>

@@ -1,0 +1,15 @@
+---
+import IconLink from "./icons/icon-link.astro"
+
+interface Props {
+    title: string
+    description: string
+    link: string
+}
+
+const { title, description, link } = Astro.props
+---
+<div class="px-6 py-4 mb-4 bg-muted rounded-md">
+    <a href={link} class="mb-2 flex gap-2 items-center text-main hover:text-primary"><p class="font-bold">{title}</p><IconLink /></a>
+    <p class="text-muted">{description}</p>
+</div>
