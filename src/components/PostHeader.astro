@@ -13,11 +13,15 @@ const publishedDateString = props.pubDate.toLocaleDateString('en-us', {
     month: 'long',
     day: 'numeric',
 })
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
+if (props.heroImage)
+    if (!images[props.heroImage]) throw new Error(`"${props.heroImage}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
 ---
 <div class="flex flex-col justify-center text-center">
     {props.heroImage && props.heroWidth && props.heroHeight && props.heroAlt &&
         <Image
-            src={props.heroImage}
+            src={images[props.heroImage]()}
             alt={props.heroAlt}
             width={props.heroWidth}
             height={props.heroHeight}
