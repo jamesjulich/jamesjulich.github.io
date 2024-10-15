@@ -12,5 +12,5 @@ Design inspired by https://www.kevinzunigacuellar.com
 
 # License
 
-See ``LICENSE`` for details.
+See ``LICENSE`` for information.
 
