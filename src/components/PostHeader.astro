@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import profile from "../images/profile.jpg"
+import profile from "../assets/profile.jpg"
 import { Image } from 'astro:assets'
 import { NAME } from '../consts'
 
@@ -28,7 +28,7 @@ const publishedDateString = props.pubDate.toLocaleDateString('en-us', {
     }
     <h1 class="text-5xl text-main font-bold mb-4">{props.title}</h1>
     <p class="text-muted mb-4">{publishedDateString}</p>
-    <a href="/" class="flex items-center gap-5 mb-6 mx-auto text-muted hover:text-primary">
+    <a href="/" class="flex items-center gap-5 mb-6 mx-auto text-muted hover:text-primary" rel="author">
         <Image 
             src={profile}
             alt="Profile pic of me"

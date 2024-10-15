@@ -10,7 +10,7 @@ const props = Astro.props
 ---
 <BaseLayout title={`${props.title} | ${SITE_TITLE}`} description={props.description} oneCol>
     <PostHeader {...props} />
-    <main class="prose">
+    <article class="prose">
         <slot />
-    </main>
+    </article>
 </BaseLayout>
