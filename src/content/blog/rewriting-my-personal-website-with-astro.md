@@ -1,7 +1,7 @@
 ---
 title: 'Rewriting My Personal Website With Astro'
 description: 'Why I decided to redesign my site and use a new framework'
-pubDate: 'Oct 20 2024'
+pubDate: 'Oct 15 2024'
 heroImage: '/src/assets/astro-illustration.jpg'
 heroWidth: 1020
 heroHeight: 510
