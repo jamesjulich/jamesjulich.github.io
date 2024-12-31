@@ -15,6 +15,10 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION, image, oneCol } = As
 <html id="root" lang="en" class="bg-main">
     <head>
         <BaseHead title={title} description={description} image={image} />
+
+        <!-- Cloudflare Web Analytics -->
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1a679d5bcc494d88b214719883724a4f"}'></script>
+        <!-- End Cloudflare Web Analytics -->
     </head>
     <body class:list={["mx-auto p-10", { "max-w-5xl": !oneCol }, { "max-w-3xl": oneCol }]}>
         <Header />
