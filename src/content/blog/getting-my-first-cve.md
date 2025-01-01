@@ -4,7 +4,7 @@ description: "How I discovered the vulnerability that lead to my first CVE"
 pubDate: "Dec 31 2024"
 ---
 
-On 12-30-24, Github issued CVE-2024-56734 for a security vulnerability I reported. This is the first time I've been through the vulnerability disclosure process, and I wanted to share how I ended up here.
+On 12-30-24, Github issued [CVE-2024-56734](https://nvd.nist.gov/vuln/detail/CVE-2024-56734) for a security vulnerability I reported. This is the first time I've been through the vulnerability disclosure process, and I wanted to share how I ended up here.
 
 I've been working on a new web app recently. It's built with NextJS and requires users to register/log in before using the app. Auth is famously hard to get right, and I didn't want to spend time building it myself. So, I decided to use a library.
 
@@ -54,7 +54,7 @@ Interestingly, better-auth has middleware applied to all auth routes that valida
 
 ## Disclosure
 
-I was able to find a security email for better-auth, and I sent in a report. I also reached out to the lead maintainer over Discord to give them a heads-up to check the inbox. By the time I woke up the next morning, the vulnerability had been patched and a Github security advisory had been issued.
+I was able to find a security email for better-auth, and I sent in a report. I also reached out to the lead maintainer over Discord to give them a heads-up to check the inbox. By the time I woke up the next morning, the vulnerability had been patched and a [Github security advisory](https://github.com/advisories/GHSA-8jhw-6pjj-8723) had been issued.
 
 GitHub makes it very easy to request a CVE ID on an open-source project. When a security advisory is published through the "Security" tab of a repository, project maintainers can request a CVE ID. GitHub issued a CVE ID shortly after the advisory went public.
 
