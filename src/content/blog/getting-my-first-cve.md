@@ -8,7 +8,7 @@ heroHeight: 510
 heroAlt: 'Illustration with text "CVE-2024-56734"'
 ---
 
-On 12-30-24, Github issued [CVE-2024-56734](https://nvd.nist.gov/vuln/detail/CVE-2024-56734) for a security vulnerability I reported. This is the first time I've been through the vulnerability disclosure process, and I wanted to share how I ended up here.
+On 12-30-24, Github issued [CVE-2024-56734](https://nvd.nist.gov/vuln/detail/CVE-2024-56734) for a security vulnerability I reported in [better-auth](https://github.com/better-auth/better-auth). This is the first time I've been through the vulnerability disclosure process, and I wanted to share how I ended up here.
 
 I've been working on a new web app recently. It's built with NextJS and requires users to register/log in before using the app. Auth is famously hard to get right, and I didn't want to spend time building it myself. So, I decided to use a library.
 
