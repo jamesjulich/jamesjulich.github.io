@@ -2,6 +2,10 @@
 title: "Getting My First CVE"
 description: "How I discovered the vulnerability that lead to my first CVE"
 pubDate: "Dec 31 2024"
+heroImage: '/src/assets/getting-my-first-cve.png'
+heroWidth: 1020
+heroHeight: 510
+heroAlt: 'Illustration with text "CVE-2024-56734"'
 ---
 
 On 12-30-24, Github issued [CVE-2024-56734](https://nvd.nist.gov/vuln/detail/CVE-2024-56734) for a security vulnerability I reported. This is the first time I've been through the vulnerability disclosure process, and I wanted to share how I ended up here.
