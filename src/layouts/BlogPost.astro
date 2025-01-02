@@ -8,7 +8,7 @@ type Props = CollectionEntry<'blog'>['data']
 
 const props = Astro.props
 ---
-<BaseLayout title={`${props.title} | ${SITE_TITLE}`} description={props.description} oneCol>
+<BaseLayout title={`${props.title} | ${SITE_TITLE}`} description={props.description} image={props.heroImage} oneCol>
     <PostHeader {...props} />
     <article class="prose mb-20">
         <slot />
