@@ -7,10 +7,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout oneCol>
 	<div class="prose mb-6">
-		<h1>Projects</h1>
+		<h1 class="mb-4">Projects</h1>
 		<p>A collection of codebases I've worked on, created, or contributed to. This list is non-exhaustive, but it represents more recent/relevant work.</p>
 		<SocialLink class="not-prose text-base" text="jamesjulich" href="https://github.com/jamesjulich"><BrandGithub /></SocialLink>
 	</div>
+	<ProjectCard 
+		title="CVE-2024-56734" 
+		description="I found a critical security vulnerability in a popular (17K+ GitHub stars) TypeScript authentication library."
+		link="https://github.com/better-auth/better-auth/security/advisories/GHSA-8jhw-6pjj-8723"
+	/>
 	<ProjectCard 
 		title="Badger Spill" 
 		description="Student organization that connects UW-Madison students to peers for support. Rewrote website and API using modern technologies, introduced Git within the organization, and reduced hosting costs by 80%."

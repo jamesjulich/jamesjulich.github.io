@@ -1,55 +1,67 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
-import BlogPostLink from '../components/BlogPostLink.astro';
-import ProfileCard from '../components/ProfileCard.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import IconArrowRight from '../components/icons/icon-arrow-right.astro';
+import { getCollection, type CollectionEntry } from "astro:content";
+import BlogPostLink from "../components/BlogPostLink.astro";
+import ProfileCard from "../components/ProfileCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import IconArrowRight from "../components/icons/icon-arrow-right.astro";
 
-const N_RECENT = 5
-const recentPosts = ((await getCollection('blog')) as CollectionEntry<'blog'>[])
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-	.slice(0, N_RECENT)
+const N_RECENT = 5;
+const recentPosts = ((await getCollection("blog")) as CollectionEntry<"blog">[])
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, N_RECENT);
 ---
 
 <BaseLayout>
-	<div class="sm:grid sm:grid-cols-3 sm:gap-20">
-		<div class="mb-12 sm:mb-0 sm:col-span-1 sm:sticky sm:top-12 sm:h-fit">
-			<ProfileCard />
-		</div>
-		<div class="col-span-2 prose">
-			<h2>About me</h2>
-			<p>Hey, my name's James! I'm a senior at UW-Madison studying Computer Science. I enjoy biking, climbing, playing trombone, and learning about new technologies.</p>
-			<h2>Highlighted projects</h2>
-			<p>Here's what I've been working on lately.</p>
-			<div class="not-prose">
-				<ProjectCard 
-					title="Badger Spill" 
-					description="Student organization that connects UW-Madison students to peers for support. Rewrote website and API using modern technologies, introduced Git within the organization, and reduced hosting costs by 80%."
-					link="https://thebadgerspill.com"
-				/>
-				<ProjectCard 
-					title="jamesjulich.me" 
-					description="Source code for this website. Redesigned in Q4 2024."
-					link="https://github.com/jamesjulich/jamesjulich.github.io"
-				/>
-			</div>
-			<h2>Recent posts</h2>
-			<div class="not-prose flex flex-col gap-2">
-				{recentPosts.map((post) =>
-					<BlogPostLink
-						title={post.data.title}
-						date={post.data.pubDate}
-						href={`/blog/${post.slug}`}
-					/>
-				)}
-				<a class="mt-6 gap-2 flex text-sm font-bold text-muted hover:text-primary" href="/blog">
-					<p>See all posts</p>
-					<IconArrowRight />
-				</a>
-			</div>
-		</div>
-	</div>
-	</div>
-
+  <div class="sm:grid sm:grid-cols-3 sm:gap-20">
+    <div class="mb-12 sm:mb-0 sm:col-span-1 sm:sticky sm:top-12 sm:h-fit">
+      <ProfileCard />
+    </div>
+    <div class="col-span-2 prose">
+      <h2>About me</h2>
+      <p>
+        Hey, my name's James! I'm a software engineer at Epic Systems and a
+        UW-Madison Computer Science '25 alumni. I enjoy biking, climbing, playing
+        trombone, and learning about new technologies.
+      </p>
+      <h2>Highlighted projects</h2>
+      <p>Here's what I've been working on lately.</p>
+      <div class="not-prose">
+        <ProjectCard
+          title="CVE-2024-56734"
+          description="I found a critical security vulnerability in a popular (17K+ GitHub stars) TypeScript authentication library."
+          link="https://github.com/better-auth/better-auth/security/advisories/GHSA-8jhw-6pjj-8723"
+        />
+        <ProjectCard
+          title="Badger Spill"
+          description="Student organization that connects UW-Madison students to peers for support. Rewrote website and API using modern technologies, introduced Git within the organization, and reduced hosting costs by 80%."
+          link="https://thebadgerspill.com"
+        />
+        <ProjectCard
+          title="jamesjulich.me"
+          description="Source code for this website. Redesigned in Q4 2024."
+          link="https://github.com/jamesjulich/jamesjulich.github.io"
+        />
+      </div>
+      <h2>Recent posts</h2>
+      <div class="not-prose flex flex-col gap-2">
+        {
+          recentPosts.map((post) => (
+            <BlogPostLink
+              title={post.data.title}
+              date={post.data.pubDate}
+              href={`/blog/${post.slug}`}
+            />
+          ))
+        }
+        <a
+          class="mt-6 gap-2 flex text-sm font-bold text-muted hover:text-primary"
+          href="/blog"
+        >
+          <p>See all posts</p>
+          <IconArrowRight />
+        </a>
+      </div>
+    </div>
+  </div>
 </BaseLayout>
