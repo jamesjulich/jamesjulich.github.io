@@ -18,7 +18,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg
 if (props.heroImage)
     if (!images[props.heroImage]) throw new Error(`"${props.heroImage}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
 ---
-<div class="flex flex-col justify-center text-center">
+<div class="flex flex-col justify-start text-start">
+    <p class="text-muted mb-4">{publishedDateString}</p>
+    <h1 class="text-4xl text-main font-bold mb-6">{props.title}</h1>
     {props.heroImage && props.heroWidth && props.heroHeight && props.heroAlt &&
         <Image
             src={images[props.heroImage]()}
@@ -30,9 +32,7 @@ if (props.heroImage)
             class="rounded-lg mb-6"
         />
     }
-    <h1 class="text-5xl text-main font-bold mb-4">{props.title}</h1>
-    <p class="text-muted mb-4">{publishedDateString}</p>
-    <a href="/" class="flex items-center gap-5 mb-6 mx-auto text-muted hover:text-primary" rel="author">
+    <a href="/" class="flex items-center gap-5 mb-6 text-muted w-fit" rel="author">
         <Image 
             src={profile}
             alt="Profile pic of me"
@@ -42,7 +42,7 @@ if (props.heroImage)
             densities={[1.5, 2]}
             loading="eager"
         />
-        <p>{NAME}</p>
+        <p>By <span class="hover:text-primary underline">{NAME}</span></p>
     </a>
     <hr class="mb-6 border-main" />
 </div>
